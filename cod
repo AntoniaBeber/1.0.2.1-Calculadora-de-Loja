@@ -1,0 +1,27 @@
+// CARTAO E CONVENIO = 15%
+//CARTAO OU CONVENIO = 10%
+//NENHUM = SEM DESCONTO
+
+const {deepEqual} = require('node:assert');
+
+function calcularValorCompra (valor, convenio,cartao) {
+
+    if (convenio && cartao ){
+        const desconto = valor * 0.15;
+        const valorFinal = valor - desconto;
+        return valorFinal;
+    }
+
+    if (convenio || cartao){
+        const desconto = valor * 0.10;
+        const valorFinal = valor - desconto;
+        return valorFinal;
+    }
+    return valor;
+
+    deepEqual(100, calcularValorCompra(100, false, false));
+
+console.log(calcularValorCompra)
+   
+}
+
